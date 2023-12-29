@@ -1,10 +1,4 @@
 import streamlit as st
-import time
-import pickle
-from pathlib import Path
-import streamlit_authenticator as stauth
-from dotenv import load_dotenv
-from PyPDF2 import PdfReader
 from chating import display_previous_chats, user, bot_response
 from auth0_component import login_button
 from variables import text_for_tab_2, text_for_tab_1, text_for_tab_3, run_once, clientId,domainName, thinnk

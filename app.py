@@ -1,7 +1,7 @@
 import streamlit as st
 from chating import display_previous_chats, user, bot_response
-from variables import text_for_tab_2, text_for_tab_1, text_for_tab_3, thinnk
-from database import insert_into_ai_personalized_guide_for_users
+from variables import thinnk
+
 
 st.set_page_config("Project", page_icon=":books:", layout="wide")
 

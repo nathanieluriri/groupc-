@@ -85,4 +85,7 @@ def run_once():
     if "Prompt" not in st.session_state:
         st.session_state.Prompt = False
 
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
     

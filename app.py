@@ -15,7 +15,14 @@ hide_streamlit_style = """
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+hide_st_style = """
 
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+"""
+st.markdown(hide_st_style, unsafe_allow_html=True)
 # Simulated user_info
 st.session_state.user_info = {"sub": "123", "given_name": "master", "email": "john@example.com"}
 

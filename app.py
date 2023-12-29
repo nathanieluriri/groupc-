@@ -7,6 +7,13 @@ st.set_page_config("Project", page_icon=":books:", layout="wide")
 
 # Simulated authentication state
 auth_state = True  # Simulating authentication by default
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Simulated user_info
 st.session_state.user_info = {"sub": "123", "given_name": "master", "email": "john@example.com"}

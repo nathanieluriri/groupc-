@@ -73,9 +73,9 @@ def display_previous_chats ():
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-    for charts in st.session_state.message_charts:
-        if message["role"] == "assistant":
-            st.bar_chart(charts)
+            for charts in st.session_state.message_charts:
+                if message["role"] == "assistant":
+                    st.bar_chart(charts)
 
 
 def user(Prompt):

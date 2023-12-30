@@ -1,5 +1,5 @@
 import streamlit as st
-from chating import display_previous_chats, user, bot_response
+from chating import display_previous_chats, user, bot_response, generate_bar_chart
 from variables import thinnk
 
 
@@ -32,7 +32,8 @@ if auth_state:
             user(st.session_state.Prompt)
             Respond, Response = thinnk(st.session_state.Prompt)
             if Respond:
-                bot_response(Response)
+                data_ = generate_bar_chart(Response)
+                bot_response(Response,data_)
     else:
         st.info("Please complete your profile")
         # Simulated profile completion steps

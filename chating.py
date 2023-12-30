@@ -98,5 +98,5 @@ def bot_response(Prompt,data):
     
     bot_res.write(The_gist)
     bot_res.bar_chart(data,use_container_width=True)
-    st.session_state.messages.append({"role":"assistant","content":Prompt})
+    st.session_state.messages.append({"role":"assistant","content":The_gist})
     st.session_state.message_charts.append(data)

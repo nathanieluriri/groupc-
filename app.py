@@ -24,6 +24,7 @@ if auth_state:
     profile_completeness = True  # Simulating profile completeness
 
     if profile_completeness:
+        st.info("TAP ON THE BAR CHART IT'S INTERACTIVE",icon="ℹ️")
         st.write(f"# Welcome Back {st.session_state.user_info['given_name']}")
         st.session_state.Prompt = st.chat_input("Detect Cyber Bullying In conversations")
 

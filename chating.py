@@ -67,15 +67,11 @@ if "message_charts" not in st.session_state:
 def display_previous_chats ():
     if "messages" not in st.session_state:
         st.session_state.messages = []
-    if "message_charts" not in st.session_state:
-        st.session_state.message_charts = []
-    # Display chat messages from history on app rerun
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-            for charts in st.session_state.message_charts:
-                if message["role"] == "assistant":
-                    st.bar_chart(charts)
+            if message["role"] == "assistant":
+                st.bar_chart(message["Chart"])
 
 
 def user(Prompt):
@@ -83,7 +79,7 @@ def user(Prompt):
         st.session_state.messages = []
     user_prompt = st.chat_message("user")
     user_prompt.write(Prompt)
-    st.session_state.messages.append({"role":"user","content":Prompt})
+    st.session_state.messages.append({"role":"user","content":Prompt,"Chart":None})
 
 
 
@@ -98,5 +94,4 @@ def bot_response(Prompt,data):
     
     bot_res.write(The_gist)
     bot_res.bar_chart(data,use_container_width=True)
-    st.session_state.messages.append({"role":"assistant","content":The_gist})
-    st.session_state.message_charts.append(data)
+    st.session_state.messages.append({ "role":"assistant", "content":The_gist, "Chart":data })

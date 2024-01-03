@@ -24,11 +24,13 @@ if auth_state:
     profile_completeness = True  # Simulating profile completeness
 
     if profile_completeness:
-        st.info("TAP ON THE BAR CHART IT'S INTERACTIVE",icon="ℹ️")
+        st.snow()
+        st.success("Enter a chat to the chat input bar and press enter or tap the arrow")
         st.write(f"# Welcome Back {st.session_state.user_info['given_name']}")
         st.session_state.Prompt = st.chat_input("Detect Cyber Bullying In conversations")
 
         if st.session_state.Prompt:
+            st.info("TAP ON THE BAR CHART IT'S INTERACTIVE",icon="ℹ️")
             display_previous_chats()
             user(st.session_state.Prompt)
             Respond, Response = thinnk(st.session_state.Prompt)

@@ -18,13 +18,13 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 if "messages" not in st.session_state:
     st.session_state.messages = []
 # Simulated user_info
-st.session_state.user_info = {"sub": "123", "given_name": "master", "email": "john@example.com"}
+st.session_state.user_info = {"sub": "123", "given_name": "User", "email": "john@example.com"}
 
 if auth_state:
     profile_completeness = True  # Simulating profile completeness
-
+    st.snow()
     if profile_completeness:
-        st.snow()
+        
         st.success("Enter a chat to the chat input bar and press enter or tap the arrow")
         st.write(f"# Welcome Back {st.session_state.user_info['given_name']}")
         st.session_state.Prompt = st.chat_input("Detect Cyber Bullying In conversations")

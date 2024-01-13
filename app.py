@@ -22,7 +22,7 @@ st.session_state.user_info = {"sub": "123", "given_name": "User", "email": "john
 
 if auth_state:
     profile_completeness = True  # Simulating profile completeness
-    st.snow()
+    
     if profile_completeness:
         
         st.success("Enter a chat to the chat input bar and press enter or tap the arrow")
